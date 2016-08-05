@@ -114,6 +114,12 @@ var optionDefinition = {
         type: 'boolean',
         dflt: false,
         transform: parseBool
+    },
+    bigNumberStrings: {
+        type: 'boolean',
+        dflt: false,
+        transform: parseBool,
+        changeable: true
     }
 };
 

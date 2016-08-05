@@ -324,8 +324,14 @@ module.exports = function MapiConnection(options) {
                                     case 'smallint':
                                     case 'int':
                                     case 'wrd':
-                                    case 'bigint':
                                         resultline.push(parseInt(curtok));
+                                        break;
+                                    case 'bigint':
+                                        if (options.bigNumberStrings) {
+                                            resultline.push(curtok);
+                                        } else {
+                                            resultline.push(parseInt(curtok));
+                                        }
                                         break;
                                     case 'real':
                                     case 'double':
